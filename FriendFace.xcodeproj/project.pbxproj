@@ -13,6 +13,7 @@
 		597CDD642A71321500BC2416 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597CDD632A71321500BC2416 /* Preview Assets.xcassets */; };
 		597CDD6B2A71323300BC2416 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597CDD6A2A71323300BC2416 /* User.swift */; };
 		597CDD6D2A71326600BC2416 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597CDD6C2A71326600BC2416 /* Friend.swift */; };
+		597CDD6F2A713A3C00BC2416 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597CDD6E2A713A3C00BC2416 /* UserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		597CDD632A71321500BC2416 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		597CDD6A2A71323300BC2416 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		597CDD6C2A71326600BC2416 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		597CDD6E2A713A3C00BC2416 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				597CDD5C2A71321500BC2416 /* FriendFaceApp.swift */,
 				597CDD5E2A71321500BC2416 /* ContentView.swift */,
+				597CDD6E2A713A3C00BC2416 /* UserView.swift */,
 				597CDD6A2A71323300BC2416 /* User.swift */,
 				597CDD6C2A71326600BC2416 /* Friend.swift */,
 				597CDD602A71321500BC2416 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			files = (
 				597CDD5F2A71321500BC2416 /* ContentView.swift in Sources */,
 				597CDD5D2A71321500BC2416 /* FriendFaceApp.swift in Sources */,
+				597CDD6F2A713A3C00BC2416 /* UserView.swift in Sources */,
 				597CDD6B2A71323300BC2416 /* User.swift in Sources */,
 				597CDD6D2A71326600BC2416 /* Friend.swift in Sources */,
 			);

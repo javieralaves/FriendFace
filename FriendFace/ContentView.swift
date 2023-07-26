@@ -17,7 +17,7 @@ struct ContentView: View {
     var body: some View {
         List(users) { user in
             NavigationLink {
-                Text(user.name)
+                UserView(user: user)
             } label: {
                 HStack {
                     Circle()
