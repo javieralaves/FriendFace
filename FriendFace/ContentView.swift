@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-struct Users: Codable {
-    var users: [User]
-}
-
 struct ContentView: View {
     @State private var users = [User]()
     
