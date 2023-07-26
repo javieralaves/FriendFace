@@ -15,11 +15,16 @@ struct ContentView: View {
     @State private var users = [User]()
     
     var body: some View {
-        List(users, id: \.id) { user in
-            VStack(alignment: .leading) {
+        List(users) { user in
+            NavigationLink {
                 Text(user.name)
-                    .font(.headline)
-                Text(user.isActive ? "Active" : "Inactive")
+            } label: {
+                HStack {
+                    Circle()
+                        .fill(user.isActive ? .green : .red)
+                        .frame(width: 8)
+                    Text(user.name)
+                }
             }
         }
         .task {
@@ -45,6 +50,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        NavigationView {
+            ContentView()
+        }
     }
 }
