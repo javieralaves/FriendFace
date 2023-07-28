@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
     @State private var users = [User]()
     
     var body: some View {
@@ -41,6 +42,24 @@ struct ContentView: View {
             users = try decoder.decode([User].self, from: data)
         } catch {
             print("Download failed")
+        }
+    }
+    
+    // Taking downloaded users and converting them into cachedUsers
+    func updateCache(with downloadedUsers: [User]) {
+        for user in downloadedUsers {
+            let cachedUser = CachedUser(context: moc)
+            
+            cachedUser.id = user.id
+            cachedUser.isActive = user.isActive
+            cachedUser.name = user.name
+            cachedUser.age = Int16(user.age)
+            cachedUser.company = user.company
+            cachedUser.email = user.email
+            cachedUser.address = user.address
+            cachedUser.about = user.about
+            cachedUser.registered = user.registered
+            cachedUser.tags = user.tags.joined(separator: ",")
         }
     }
 }
