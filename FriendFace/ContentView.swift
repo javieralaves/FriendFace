@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
-    @State private var users = [User]()
+    // @State private var users = [User]() (not needed since implementing core data)
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var users: FetchedResults<CachedUser>
     
     var body: some View {
         List(users) { user in
@@ -20,7 +21,7 @@ struct ContentView: View {
                     Circle()
                         .fill(user.isActive ? .green : .red)
                         .frame(width: 8)
-                    Text(user.name)
+                    Text(user.wrappedName)
                 }
             }
         }
@@ -39,7 +40,7 @@ struct ContentView: View {
             
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            users = try decoder.decode([User].self, from: data)
+            let users = try decoder.decode([User].self, from: data)
             
             // Additional code for caching offline into core data
             await MainActor.run {
