@@ -60,6 +60,14 @@ struct ContentView: View {
             cachedUser.about = user.about
             cachedUser.registered = user.registered
             cachedUser.tags = user.tags.joined(separator: ",")
+            
+            for friend in user.friends {
+                let cachedFriend = CachedFriend(context: moc)
+                cachedFriend.id = friend.id
+                cachedFriend.name = friend.name
+                
+                cachedUser.addToFriends(cachedFriend)
+            }
         }
     }
 }
