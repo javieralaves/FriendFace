@@ -40,6 +40,11 @@ struct ContentView: View {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             users = try decoder.decode([User].self, from: data)
+            
+            // Additional code for caching offline into core data
+            await MainActor.run {
+                updateCache(with: users)
+            }
         } catch {
             print("Download failed")
         }
@@ -69,6 +74,8 @@ struct ContentView: View {
                 cachedUser.addToFriends(cachedFriend)
             }
         }
+        
+        try? moc.save()
     }
 }
 
